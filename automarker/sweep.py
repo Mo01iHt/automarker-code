@@ -434,10 +434,10 @@ def collect_summaries(output_folder):
 
 def main():
     parser = argparse.ArgumentParser(description='Resumable AutoMarker parameter sweep for Orion CRC')
-    parser.add_argument('--root_dir', type=str, default='/c23227/hwx/MarkerFinder/temp/mifcsv/cell_raw')
-    parser.add_argument('--group1_txt', type=str, default='/c23227/hwx/XCellAligner_old/datasets/orion_crc/good.txt')
-    parser.add_argument('--group2_txt', type=str, default='/c23227/hwx/XCellAligner_old/datasets/orion_crc/bad.txt')
-    parser.add_argument('--output_folder', type=str, default='/c23227/hwx/XCellAligner_old/output/orion_crc_automarker_sweep')
+    parser.add_argument('--root_dir', type=str, default='/path/to/features')
+    parser.add_argument('--group1_txt', type=str, default='/path/to/group1.txt')
+    parser.add_argument('--group2_txt', type=str, default='/path/to/group2.txt')
+    parser.add_argument('--output_folder', type=str, default='/path/to/output')
     parser.add_argument('--n_per_group', type=int, default=120000)
     parser.add_argument('--feature_dim', type=int, default=None)
     parser.add_argument('--entropy_cluster_k', type=int, default=12)
