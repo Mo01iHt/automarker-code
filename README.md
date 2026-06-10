@@ -11,10 +11,12 @@ package_root/
 |  |- core.py
 |  |- upstream.py
 |  |- sweep.py
+|  |- latency.py
 |  `- traceback.py
 |- scripts/
 |  |- run_he_to_multimodal_features.py
 |  |- run_region_sweep.py
+|  |- run_latency_benchmark.py
 |  `- run_traceback_regions.py
 |- requirements.txt
 `- README.md
@@ -25,6 +27,7 @@ package_root/
 - `automarker.core`: region discovery and statistical filtering
 - `automarker.upstream`: HE-to-feature inference
 - `automarker.sweep`: region-level benchmarking and hyperparameter sweeps
+- `automarker.latency`: latency and scalability benchmarking for adaptive neighborhood expansion
 - `automarker.traceback`: high-confidence region traceback for cell-level features
 
 ## Entry points
@@ -41,7 +44,13 @@ python scripts/run_he_to_multimodal_features.py --image_path /path/to/image.png 
 python scripts/run_region_sweep.py --root_dir /path/to/features --group1_txt /path/to/group1.txt --group2_txt /path/to/group2.txt --output_folder /path/to/output_sweep
 ```
 
-### 3. Run region traceback on one cell-level feature file
+### 3. Run latency and scalability benchmark
+
+```bash
+python scripts/run_latency_benchmark.py --root_dir /path/to/features --group1_txt /path/to/group1.txt --group2_txt /path/to/group2.txt --output_dir /path/to/output_latency
+```
+
+### 4. Run region traceback on one cell-level feature file
 
 ```bash
 python scripts/run_traceback_regions.py --json_path /path/to/region_feature_fingerprints.json --input_pkl /path/to/cell_feature.pkl --output_json /path/to/traceback.json
